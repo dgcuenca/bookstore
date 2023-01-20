@@ -8,7 +8,7 @@ class Categories extends Component {
 
   render() {
     return (
-      <div>CATEGORIES</div>
+        <button type="button">Check status</button>
     );
   }
 }
