@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Book from './book';
 
 class Books extends Component {
   constructor(props) {
@@ -8,15 +9,8 @@ class Books extends Component {
       books: [
         {
           id: 1,
-          gender: "Action",
           title: "The Hunger Games",
           author: "Suzanne Collins",
-          button1: "Comments",
-          button2: "Remove",
-          button3: "Edit",
-          chapter: "CURRENT CHAPTER",
-          numberChapter: "Chapter 17",
-          button4: "UPDATE PROGRESS",
         }
       ],
     };
@@ -25,10 +19,8 @@ class Books extends Component {
   render() {
     return (
       <ul>
-      {this.state.books.map(todo => (
-        <li>{todo.title}</li>
-      ))}
-    </ul>
+        <Book books={this.state.books} />
+      </ul>
     );
   }
 }
@@ -36,13 +28,6 @@ export default Books;
 
 Books.propTypes = {
   id: PropTypes.number,
-  gender: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
-  button1: PropTypes.string,
-  button2: PropTypes.string,
-  button3: PropTypes.string,
-  chapter: PropTypes.string,
-  numberChapter: PropTypes.string,
-  button4: PropTypes.string,
 };
