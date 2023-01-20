@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './Components/navBar';
+import Book from './Components/book';
+import Categories from './Components/categories';
 
 class App extends Component {
   constructor(props) {
