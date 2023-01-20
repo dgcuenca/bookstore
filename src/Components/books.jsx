@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Book from './book';
+import Form from './form';
 
 class Books extends Component {
   constructor(props) {
@@ -18,9 +19,14 @@ class Books extends Component {
 
   render() {
     return (
-      <ul>
-        <Book books={this.state.books} />
-      </ul>
+      <>
+        <ul>
+          <Book books={this.state.books} />
+        </ul>
+        <div>
+          <Form />
+        </div>
+      </>
     );
   }
 }

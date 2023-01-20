@@ -8,11 +8,13 @@ class Book extends Component {
 
   render() {
     return (
-      <>
-       {this.state.books.map(todo => (
-        <li>{todo.title}</li>
-      ))}
-      </>
+      this.props.books.map(book => (
+        <li key={book.id}>
+          <p>{book.title}</p>
+          <p>{book.author}</p>
+          <button type="button">Remove</button>
+        </li>
+      ))
     );
   }
 }
