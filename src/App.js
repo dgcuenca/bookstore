@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './Components/navBar';
-import Book from './Components/book';
+import Books from './Components/books';
 import Categories from './Components/categories';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
       <>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Book />} />
+          <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
       </>
