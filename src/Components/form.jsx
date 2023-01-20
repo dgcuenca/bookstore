@@ -8,7 +8,18 @@ class Form extends Component {
 
   render() {
     return (
-        <div>FORM</div>
+      <form>
+        <input
+          type="text"
+          placeholder="Tittle"
+          name="title"
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          name="title"
+        />
+      </form>
     );
   }
 }
