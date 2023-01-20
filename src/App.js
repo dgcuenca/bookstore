@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from './Components/navBar';
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Book />} />
           <Route path="/categories" element={<Categories />} />
