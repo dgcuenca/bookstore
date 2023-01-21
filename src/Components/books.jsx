@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Book from './book';
 import Form from './form';
 
@@ -10,9 +10,9 @@ class Books extends Component {
       books: [
         {
           id: 1,
-          title: "The Hunger Games",
-          author: "Suzanne Collins",
-        }
+          title: 'The Hunger Games',
+          author: 'Suzanne Collins',
+        },
       ],
     };
   }

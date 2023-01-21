@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from 'react-icons/fa';
 
 const NavBar = () => {
   const links = [
@@ -28,7 +28,7 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <div><FaUserCircle  /></div>
+      <div><FaUserCircle /></div>
     </nav>
   );
 };
