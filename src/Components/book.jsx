@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-class Book extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Book = (props) => {
+  const { books } = props;
+  const dispatch = useDispatch();
+
+  function removeHandler(bookId) {
+    dispatch(removeBook(bookId));
   }
 
-  render() {
-    const { books } = this.props;
-    return (
-      books.map((book) => (
-        <li key={book.id}>
-          <p>{book.title}</p>
-          <p>{book.author}</p>
-          <button type="button">Remove</button>
-        </li>
-      ))
-    );
-  }
-}
+  return (
+    books.map((book) => (
+      <li key={book.id}>
+        <p>{book.title}</p>
+        <p>{book.author}</p>
+        <button
+          type="button"
+          onClick={() => removeHandler(book.id)}
+        >
+          Remove
+        </button>
+      </li>
+    ))
+  );
+};
 
 Book.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
