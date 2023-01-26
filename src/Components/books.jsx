@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Book from './book';
 import Form from './form';
@@ -18,10 +18,11 @@ class Books extends Component {
   }
 
   render() {
+    const { books } = this.state;
     return (
       <>
         <ul>
-          <Book books={this.state.books} />
+          <Book books={books} />
         </ul>
         <div>
           <Form />
@@ -32,8 +33,8 @@ class Books extends Component {
 }
 export default Books;
 
-Books.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  author: PropTypes.string,
-};
+// Books.propTypes = {
+//   id: PropTypes.number,
+//   title: PropTypes.string,
+//   author: PropTypes.string,
+// };
