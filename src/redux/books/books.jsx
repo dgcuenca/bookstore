@@ -20,33 +20,45 @@ export const getData = createAsyncThunk('bookstore/books/GET_BOOKS', async () =>
   'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books',
 ).then((res) => res.json()));
 
-
-
 // Reducer
-export default function reducer(state = defaultState, action = {}) {
-  switch (action.type) {
-    case ADD_BOOK: {
-      return [
-        ...state,
-        action.book,
-      ];
-    }
+// export default function reducer(state = defaultState, action = {}) {
+//   switch (action.type) {
+//     case ADD_BOOK: {
+//       return [
+//         ...state,
+//         action.book,
+//       ];
+//     }
 
-    case REMOVE_BOOK: {
-      return state.filter((item) => item.id !== action.id);
-    }
+//     case REMOVE_BOOK: {
+//       return state.filter((item) => item.id !== action.id);
+//     }
 
-    default: return state;
-  }
-}
+//     default: return state;
+//   }
+// }
 
 // Action creators
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
+export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books',
+  {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: `${book.item_id}`,
+      title: book.title,
+      author: book.author,
+      category: 'TBD',
+    }),
+  },
+).then(() => {
+  const newbook = {
+    ...book,
   };
-}
+  return newbook;
+}));
 
 export function removeBook(bookId) {
   return {
