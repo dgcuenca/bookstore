@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { checkStatus } from '../redux/categories/categories';
 
-class Categories extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+export default function Categories() {
+  const dispatch = useDispatch();
 
-  render() {
-    return (
-      <button type="button">Check status</button>
-    );
-  }
+  return (
+    <button
+      type="button"
+      onClick={() => dispatch(checkStatus())}
+    >
+      Check status
+    </button>
+  );
 }
-export default Categories;
