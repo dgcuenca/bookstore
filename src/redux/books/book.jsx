@@ -34,6 +34,7 @@ export default function reducer(state = defaultState, action = {}) {
   }
 }
 
+// Action creators
 export function addBook(book) {
   return {
     type: ADD_BOOK,
