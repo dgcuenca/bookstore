@@ -60,9 +60,15 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
   return newbook;
 }));
 
-export function removeBook(bookId) {
-  return {
-    type: REMOVE_BOOK,
-    id: bookId,
-  };
-}
+export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => fetch(
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books/${id}',
+  {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: `${id}`,
+    }),
+  },
+).then(() => id));
