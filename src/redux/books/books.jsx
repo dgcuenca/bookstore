@@ -4,16 +4,16 @@ import { v4 as uuidv4 } from 'uuid';
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const defaultState = [
-//   {
-//     id: uuidv4(),
-//     title: 'Atomic Habits',
-//     author: 'James Clear',
-//   },
-//   {
-//     id: uuidv4(),
-//     title: 'Emotional Intelligence',
-//     author: 'Daniel Goleman',
-//   },
+  {
+    id: uuidv4(),
+    title: 'Atomic Habits',
+    author: 'James Clear',
+  },
+  {
+    id: uuidv4(),
+    title: 'Emotional Intelligence',
+    author: 'Daniel Goleman',
+  },
 ];
 
 // Reducer
