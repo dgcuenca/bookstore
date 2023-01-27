@@ -1,42 +1,13 @@
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 // Actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-// const defaultState = [
-//   {
-//     id: uuidv4(),
-//     title: 'Atomic Habits',
-//     author: 'James Clear',
-//   },
-//   {
-//     id: uuidv4(),
-//     title: 'Emotional Intelligence',
-//     author: 'Daniel Goleman',
-//   },
-// ];
+
 export const getData = createAsyncThunk('bookstore/books/GET_BOOKS', async () => fetch(
   'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books',
 ).then((res) => res.json()));
-
-// Reducer
-// export default function reducer(state = defaultState, action = {}) {
-//   switch (action.type) {
-//     case ADD_BOOK: {
-//       return [
-//         ...state,
-//         action.book,
-//       ];
-//     }
-
-//     case REMOVE_BOOK: {
-//       return state.filter((item) => item.id !== action.id);
-//     }
-
-//     default: return state;
-//   }
-// }
 
 // Action creators
 export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
@@ -47,7 +18,7 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
       'Content-type': 'application/json',
     },
     body: JSON.stringify({
-      item_id: `${book.item_id}`,
+      item_id: uuidv4(),
       title: book.title,
       author: book.author,
       category: 'TBD',
@@ -55,9 +26,8 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
   },
 ).then(() => {
   const newbook = {
-    ...book, key: book.id,
+    ...book, item_id: book.id,
   };
-  console.log('newbookPOST', newbook, typeof newbook)
   return newbook;
 }));
 
@@ -74,6 +44,7 @@ export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => fetch(
   },
 ).then(() => id));
 
+// Reducer
 const dataSlice = createSlice({
   name: 'data',
   initialState: {
@@ -101,12 +72,10 @@ const dataSlice = createSlice({
     },
     [addBook.fulfilled]: (state, action) => {
       const currentState = state;
-      console.log('action.payload2', action.payload, typeof action.payload)
       const newBook = {
         ...action.payload,
         category: 'TBD',
       };
-      console.log('newBook', newBook)
       currentState.books = [...state.books, newBook];
     },
     [removeBook.fulfilled]: (state, { payload }) => {
