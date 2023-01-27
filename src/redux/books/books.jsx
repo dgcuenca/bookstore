@@ -72,3 +72,42 @@ export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => fetch(
     }),
   },
 ).then(() => id));
+
+const dataSlice = createSlice({
+  name: 'data',
+  initialState: {
+    books: [],
+    loading: false,
+  },
+  extraReducers: {
+    [getData.pending]: (state) => {
+      const currentState = state;
+      currentState.loading = true;
+    },
+    [getData.fulfilled]: (state, action) => {
+      const currentState = state;
+      currentState.loading = false;
+      const data = {...action.payload};
+      currentState.books = data;
+    },
+    [getData.rejected]: (state) => {
+      const currentState = state;
+      currentState.loading = false;
+    },
+    [addBook.fulfilled]: (state, action) => {
+      const currentState = state;
+      const newBook = {
+        ...action.payload,
+        category: 'TBD',
+      };
+      currentState.books = [...state.books, newBook];
+    },
+    [removeBook.fulfilled]: (state, { payload }) => {
+      const currentState = state;
+      const filtered = state.books.filter((item) => item.item_id !== payload);
+      currentState.books = filtered;
+    },
+  },
+});
+
+export default dataSlice.reducer;
