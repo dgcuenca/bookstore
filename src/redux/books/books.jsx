@@ -55,8 +55,9 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
   },
 ).then(() => {
   const newbook = {
-    ...book,
+    ...book, key: book.id,
   };
+  console.log('newbookPOST', newbook, typeof newbook)
   return newbook;
 }));
 
@@ -87,8 +88,12 @@ const dataSlice = createSlice({
     [getData.fulfilled]: (state, action) => {
       const currentState = state;
       currentState.loading = false;
-      const data = { ...action.payload };
-      currentState.books = data;
+      const data = action.payload;
+      const books = Object.keys(data).map((key) => ({
+        item_id: key,
+        ...data[key][0],
+      }));
+      currentState.books = books;
     },
     [getData.rejected]: (state) => {
       const currentState = state;
@@ -96,10 +101,12 @@ const dataSlice = createSlice({
     },
     [addBook.fulfilled]: (state, action) => {
       const currentState = state;
+      console.log('action.payload2', action.payload, typeof action.payload)
       const newBook = {
         ...action.payload,
         category: 'TBD',
       };
+      console.log('newBook', newBook)
       currentState.books = [...state.books, newBook];
     },
     [removeBook.fulfilled]: (state, { payload }) => {

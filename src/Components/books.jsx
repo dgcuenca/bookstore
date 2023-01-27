@@ -5,7 +5,7 @@ import Form from './form';
 import { getData } from '../redux/books/books';
 
 export default function Books() {
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
