@@ -41,10 +41,62 @@ code {
   background-color: white;
   display: flex;
   padding: 2.5rem 2.5rem;
+  gap: 3rem;
+  border-bottom: 0.1rem solid #e8e8e8;
 }
 
 .navBar h1 {
   color: rgb(2, 144, 255);
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
 }
+
+.navBar ul {
+  flex-grow: 1;
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+}
+
+.navBar li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.19rem;
+
+}
+
+.navBar a {
+  color: rgb(173, 170, 170);
+  text-decoration-line: none;
+}
+
+.active {
+  color: rgb(18, 18, 18) !important;
+}
+
+.mainContainer {
+  background-color: rgb(250, 250, 250);
+  padding: 3rem 2rem;
+}
+
+.booksContainer {
+  background-color: rgba(250, 250, 250);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.booksContainer li {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #e8e8e8;
+  padding: 2rem;
+}
+

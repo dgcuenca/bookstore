@@ -16,10 +16,12 @@ const NavBar = () => {
     },
   ];
 
+  const styleUser = { color: 'blue', fontSize: '3rem' };
+
   return (
     <nav className="navBar">
       <h1>Bookstore CMS</h1>
-      <ul className="ulNavbar">
+      <ul>
         {links.map((link) => (
           <li key={link.id}>
             <NavLink to={link.path}>
@@ -28,7 +30,7 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <div><FaUserCircle /></div>
+      <div><FaUserCircle style={styleUser} /></div>
     </nav>
   );
 };

@@ -14,11 +14,13 @@ export default function Books() {
 
   return (
     <>
-      <ul>
-        <Book books={books} />
-      </ul>
-      <div>
-        <Form />
+      <div className="mainContainer">
+        <ul className="booksContainer">
+          <Book books={books} />
+        </ul>
+        <div>
+          <Form />
+        </div>
       </div>
     </>
   );
