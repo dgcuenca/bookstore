@@ -61,7 +61,7 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
 }));
 
 export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => fetch(
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books/${id}',
+  `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RWtYzZRZdkOMrjjdxWSg/books/${id}`,
   {
     method: 'DELETE',
     headers: {
@@ -87,7 +87,7 @@ const dataSlice = createSlice({
     [getData.fulfilled]: (state, action) => {
       const currentState = state;
       currentState.loading = false;
-      const data = {...action.payload};
+      const data = { ...action.payload };
       currentState.books = data;
     },
     [getData.rejected]: (state) => {
