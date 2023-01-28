@@ -7,7 +7,7 @@ export default function Categories() {
   const status = useSelector((state) => state.categories);
 
   return (
-    <>
+    <div className="categories">
       <h2>{status}</h2>
       <button
         type="button"
@@ -15,6 +15,6 @@ export default function Categories() {
       >
         Check status
       </button>
-    </>
+    </div>
   );
 }

@@ -35,7 +35,7 @@ code {
 
 #root {
   background-color: rgb(245, 246, 250);
-  padding: 2rem 2rem;
+  padding: 5.5rem 6rem 7rem 6rem;
 }
 
 .navBar {
@@ -81,7 +81,7 @@ code {
 
 .mainContainer {
   background-color: rgb(250, 250, 250);
-  padding: 3rem 2rem;
+  padding: 3rem 5rem 7rem 5rem;
 }
 
 .booksContainer {
@@ -92,7 +92,7 @@ code {
   flex-direction: column;
   gap: 2rem;
   list-style-type: none;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
   margin-bottom: 4rem;
   border-bottom: 0.25rem solid #e8e8e8;
 }
@@ -226,9 +226,11 @@ code {
 .form {
   display: flex;
   gap: 3rem;
+  padding-bottom: 6rem;
 }
 
 .inputForm {
+  width: 0;
   flex-grow: 1;
   border: rgb(232, 232, 232) 0.1rem solid;
   padding: 1rem 2rem;
@@ -241,6 +243,47 @@ code {
 }
 
 .inputForm:focus {
-  border: rgb(2, 144, 255) 0.1rem solid; 
+  border: rgb(2, 144, 255) 0.1rem solid;
   outline: none;
+}
+
+.inputForm::placeholder {
+  color: #dad8d8;
+}
+
+.form button {
+  background-color: rgb(2, 144, 255);
+  color: white;
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  padding: 1.2rem 1.2rem;
+  border: white;
+  line-height: normal;
+
+}
+
+.categories  {
+  padding: 3rem ;
+}
+
+.categories h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+
+}
+
+.categories button {
+  background-color: rgb(2, 144, 255);
+  color: white;
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  padding: 1.2rem 1.2rem;
+  border: white;
+  line-height: normal;
 }
