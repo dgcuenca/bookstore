@@ -67,7 +67,6 @@ code {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   letter-spacing: 0.19rem;
-
 }
 
 .navBar a {
@@ -262,17 +261,15 @@ code {
   padding: 1.2rem 1.2rem;
   border: white;
   line-height: normal;
-
 }
 
-.categories  {
-  padding: 3rem ;
+.categories {
+  padding: 3rem;
 }
 
 .categories h2 {
   font-size: 3.2rem;
   font-weight: 700;
-
 }
 
 .categories button {
