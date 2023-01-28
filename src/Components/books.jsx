@@ -18,7 +18,7 @@ export default function Books() {
         <ul className="booksContainer">
           <Book books={books} />
         </ul>
-        <div>
+        <div className="formContainer">
           <Form />
         </div>
       </div>

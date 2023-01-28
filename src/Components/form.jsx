@@ -19,28 +19,35 @@ const Form = (props) => {
   }
 
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="Tittle"
-        onChange={(e) => setNewTitle(e.target.value)}
-        value={newtitle}
-        name="title"
-      />
-      <input
-        type="text"
-        placeholder="Author"
-        onChange={(e) => setNewAuthor(e.target.value)}
-        value={newAuthor}
-        name="author"
-      />
-      <button
-        type="button"
-        onClick={() => validateNewbook()}
-      >
-        ADD BOOK
-      </button>
-    </form>
+    <>
+      <h2>
+        ADD NEW BOOK
+      </h2>
+      <form className="form">
+        <input
+          type="text"
+          placeholder="Tittle"
+          onChange={(e) => setNewTitle(e.target.value)}
+          value={newtitle}
+          name="title"
+          className="inputForm"
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          onChange={(e) => setNewAuthor(e.target.value)}
+          value={newAuthor}
+          name="author"
+          className="inputForm"
+        />
+        <button
+          type="button"
+          onClick={() => validateNewbook()}
+        >
+          ADD BOOK
+        </button>
+      </form>
+    </>
   );
 };
 
