@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 html {
   font-size: 62.5%;
@@ -97,6 +98,115 @@ code {
   background-color: #fff;
   border-radius: 0.4rem;
   border: 0.1rem solid #e8e8e8;
-  padding: 2rem;
+  padding: 3rem;
+  display: flex;
+  gap: 1rem;
 }
 
+.gender {
+  color: rgb(18, 18, 18);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.container1 h2 {
+  color: rgb(18, 18, 18);
+  font-family: 'Roboto', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02rem;
+  margin: 0.4rem 0;
+}
+
+.author {
+  color: rgb(67, 134, 191);
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.buttonContainer button {
+  background-color: white;
+  border: none;
+  color: rgb(67, 134, 191);
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.buttonSeparator {
+  height: 2rem;
+  border: #e8e8e8 solid 0.1rem;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.pushContainer {
+  margin-left: auto;
+}
+
+.percentage {
+  color: rgb(18, 18, 18);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+}
+
+.completed {
+  margin-top: -3rem;
+  margin-bottom: 3rem;
+  color: rgb(18, 18, 18);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  opacity: 0.5;
+}
+
+.mainSeparator {
+  border: #e8e8e8 solid 0.1rem;
+  height: 7rem;
+  margin: auto 3.688rem auto 4.938rem;
+}
+
+.chapter {
+  color: rgb(18, 18, 18);
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.chapterNumber {
+  color: rgb(18, 18, 18);
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.04rem;
+  margin: -1rem 0 1rem 0;
+}
+
+.container3 button {
+  background-color: rgb(2, 144, 255);
+  color: white;
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  padding: 0.8rem 2.4rem;
+  border: white;
+}

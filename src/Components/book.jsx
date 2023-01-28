@@ -7,7 +7,7 @@ import { removeBook } from '../redux/books/books';
 const Book = (props) => {
   const { books } = props;
   const dispatch = useDispatch();
-  const styleLoad = { color: 'blue', fontSize: '3rem' };
+  const styleLoad = { color: 'blue', fontSize: '7rem' };
 
   function removeHandler(bookId) {
     dispatch(removeBook(bookId));
@@ -19,30 +19,37 @@ const Book = (props) => {
           <p className="gender">Gender</p>
           <h2>{book.title}</h2>
           <p className="author">{book.author}</p>
-          <button
-            type="button"
-          >
-            Comments
-          </button>
-          <button
-            type="button"
-            onClick={() => removeHandler(book.item_id)}
-          >
-            Remove
-          </button>
-          <button
-            type="button"
-          >
-            Edit
-          </button>
+          <div className="buttonContainer">
+            <button
+              type="button"
+            >
+              Comments
+            </button>
+            <hr className="buttonSeparator" />
+            <button
+              type="button"
+              onClick={() => removeHandler(book.item_id)}
+            >
+              Remove
+            </button>
+            <hr className="buttonSeparator" />
+            <button
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
         </div>
         <div className="container2">
-          <div><AiOutlineLoading3Quarters style={styleLoad} /></div>
+          <div className="pushContainer">
+            <AiOutlineLoading3Quarters style={styleLoad} />
+          </div>
           <div>
             <p className="percentage">xx%</p>
             <p className="completed">Completed</p>
           </div>
         </div>
+        <hr className="mainSeparator" />
         <div className="container3">
           <p className="chapter">CURRENT CHAPTER</p>
           <p className="chapterNumber"> Chapter ##</p>
